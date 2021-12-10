@@ -31,7 +31,7 @@ export default function Login() {
 
       <TouchableOpacity style={styles.facebookContainer}>
         <FontAwesome5 name="facebook" size={25} color="#399fff"/>
-        <Text style={styles.facebookTexty}>Continue como João</Text>
+        <Text style={styles.facebookTexty}>Entre com o Facebook</Text>
       </TouchableOpacity>  
 
       <View style={styles.divisor}>
