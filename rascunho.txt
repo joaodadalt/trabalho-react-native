@@ -1,0 +1,127 @@
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Platform } from 'react-native';
+import { TextInput } from 'react-native-web';
+import { FontAwesome5 } from '@expo/vector-icons'; 
+
+export default function App() {
+  return (
+    
+    <View style={styles.container}>
+
+      <StatusBar backgroundColor="#FFF" translucent={false} />
+
+      <Image source={require('./assets/logo.png')} style={styles.logo} />
+
+      <TextInput placeholder="Celular, username ou email" style={styles.input} />  
+
+      <TextInput placeholder="Senha" style={styles.input} />  
+
+      <View style={styles.forgotcontainer}>
+        <TouchableOpacity>
+          <Text style={styles.forgotText}>Esqueceu sua senha?</Text>
+        </TouchableOpacity>    
+      </View>
+
+      <TouchableOpacity style={styles.loginButton}>
+        <Text style={styles.loginText}>Acessar</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.facebookContainer}>
+        <FontAwesome5 name="facebook" size={25} color="#399fff"/>
+        <Text style={styles.facebookTexty}>Continue como João</Text>
+      </TouchableOpacity>  
+
+      <View style={styles.divisor}>
+        <View style={styles.divisorLine}></View>
+        <Text style={{ marginHorizontal: '3%' }} >OU</Text>
+        <View style={styles.divisorLine}></View>
+      </View>
+
+      <View style={styles.signUpContainer}>
+        <Text style={styles.signuptext}>Não possui uma conta?</Text>
+        <TouchableOpacity>
+          <Text style={StyleSheet.signUpButton}>Cadastre-se</Text>
+        </TouchableOpacity>
+      </View>
+
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#FFF',
+    alignItems: 'center',
+    justifyContent: 'center',    
+  },
+  logo:{
+    marginTop: '20%',
+    marginBottom: '20%',    
+  }, 
+  input:{
+    width: '80%',
+    height: 40,
+    backgroundColor: '#F4F3F3',
+    marginBottom: 20,
+    padding: 8,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#E0E0E0',
+  },
+  forgotContainer:{
+    width: '80%',
+    alignItems: 'flex-end',    
+  },
+  forgotText:{
+    color:'#0399fff',    
+  },
+  loginButton:{
+    marginTop: '5%',
+    backgroundColor: '#399fff',    
+    width: '80%',
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 5,
+  },
+  loginText:{
+    color: '#FFF',
+    fontSize: 17,    
+  },
+  facebookContainer:{
+    flexDirection: 'row',
+    alignItems: 'center',  
+    marginTop: '15%',    
+  },
+  facebookText:{
+    color: '#399fff',
+    paddingLeft: 8,
+    fontSize: 15,
+  },
+  divisor:{
+    marginTop: '10%',
+    flexDirection: 'row',
+    width: '90%',
+    alignItems: 'center',
+    justifyContent: 'center',    
+  },
+  divisorLine:{
+    width: '45%',
+    height: 3,
+    backgroundColor: '#EFEDED',
+    borderRadius: 5,
+  },
+  signUpContainer:{
+    flexDirection: 'row',
+    marginTop: '10%',
+  },
+  signuptext:{
+    color: '#C4c4c4',
+    paddingRight: 5,
+  },
+  signUpButton:{
+    color: '#399fff',
+    fontWeight: 'bold',
+  }
+});
